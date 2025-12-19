@@ -13,8 +13,6 @@
     - `about.astro` - About page
     - `projects/index.astro` - Projects listing page
     - `projects/[id].astro` - Individual project pages dynamic route
-    - `blog/index.astro` - Blog listing page
-    - `blog/[id].astro` - Individual article pages dynamic route
 
 5. Create a directory called `data` inside the `/src` directory. Inside the data directory, create two directories for the content of your projects and blog. Make sure your content is in Markdown format:
 
@@ -22,11 +20,7 @@
     - `src/data/projects/project-2.md`
     - `src/data/projects/project-3.md`
 
-    - `src/data/blog/my-first-article.md`
-    - `src/data/blog/my-second-article.md`
-    - `src/data/blog/my-third-article.md`
-
-    Feel free to add more projects or blog articles. Use dummy content and check out the Markdown guide [https://www.markdownguide.org/basic-syntax/] to help you with the format. Also check out the Astro documentation on how to create the content [https://docs.astro.build/en/guides/content-collections/#defining-custom-ids]
+    Feel free to add more projects. Use dummy content and check out the Markdown guide [https://www.markdownguide.org/basic-syntax/] to help you with the format. Also check out the Astro documentation on how to create the content [https://docs.astro.build/en/guides/content-collections/#defining-custom-ids]
 
     Take this opportunity to learn and play around with Markdown.
 
@@ -50,14 +44,14 @@
     import { defineCollection } from 'astro:content';
     import { glob, file } from 'astro/loaders';
 
-    const blog = defineCollection({
-      loader: glob({ pattern: "**/*.md", base: "./src/data/blog" })
+    const projects = defineCollection({
+      loader: glob({ pattern: "**/*.md", base: "./src/data/projects" })
     });
 
-    export const collections = { blog };
+    export const collections = { projects };
     ```
 
-8. Add content to all your pages using dummy content. For the **projects** and **blog** landing pages, output their collection titles with a *"Read More"* link for each one that points to their dynamic route. Reference: [https://docs.astro.build/en/guides/content-collections/#using-content-in-astro-templates]
+8. Add content to all your pages using dummy content. For the **projects** landing pages, output their collection titles with a *"Read More"* link for each one that points to their dynamic route. Reference: [https://docs.astro.build/en/guides/content-collections/#using-content-in-astro-templates]
 
 9. The dynamic routes `[id].astro` should show the Markdown content. Reference: [https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default]
 
