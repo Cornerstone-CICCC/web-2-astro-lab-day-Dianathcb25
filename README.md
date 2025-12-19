@@ -5,7 +5,7 @@
 ## Instructions
 
 1. Clone the repository to your local machine.
-2. Run `cd hilarious-horizon` to go inside the Astro project directory. Run `npm install` to install the node packages/dependencies required by Astro listed inside the `package.json` file.
+2. Run `cd name-of-project` to go inside the Astro project directory. Run `npm install` to install the node packages/dependencies required by Astro listed inside the `package.json` file.
 3. Run `npm run dev` to start the project.
 4. Set up your project pages:
 
