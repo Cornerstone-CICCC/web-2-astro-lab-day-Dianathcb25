@@ -1,0 +1,22 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+import { getCollection} from 'astro:content';
+const projects = await getCollection("projects")
+const pageTitle = "Projects"
+const metaDesc = "This is the Projects page."
+
+const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title))
+---
+    <Layout title={pageTitle} description={metaDesc}>
+        <h1>{pageTitle}</h1>
+
+        <ul class="project-list">
+            {sortedProjects.map(project => (
+                <li>
+                    <h2>{project.data.title}</h2>
+                    <a href={`/projects/${project.id}`} class="read-more-link">Read More</a>
+                </li>
+            ))}
+        </ul>
+    </Layout>

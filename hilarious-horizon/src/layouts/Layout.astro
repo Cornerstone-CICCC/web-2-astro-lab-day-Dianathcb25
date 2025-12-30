@@ -1,14 +1,29 @@
-<!doctype html>
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+const { title, description } = Astro.props
+---
+<!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<link rel="stylesheet" href="/public/css/styles.css">
+		<title>{title}</title>
+    	<meta name="description" content={description}>
+		<style>
+	@import url('https://fonts.googleapis.com/css2?family=Almendra:ital,wght@0,400;0,700;1,400;1,700&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Geo:ital@0;1&family=Grenze+Gotisch:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Orbitron:wght@400..900&family=Rye&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+	</style>
+
 	</head>
 	<body>
-		<slot />
+		<Header title={title} description={description} />
+			<main class="site-content">
+				<slot />
+			</main>
+		<Footer />
 	</body>
 </html>
 
