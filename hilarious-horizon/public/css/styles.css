@@ -11,14 +11,6 @@ h1, h2, h2, h4, h5, h6 {
     font-family: "Grenze Gotisch", sans-serif;
 }
 
-h1 {
-    margin-left: 15px;
-}
-
-h2 {
-    margin-left: 20px;
-}
-
 p {
     font-family: "Almendra", sans-serif;
     margin-left: 20px;
@@ -26,11 +18,12 @@ p {
 
 .project-list{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    padding: 0;
+    padding: 2rem;
     list-style: none;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
 }
 
 .project-list li {
@@ -43,6 +36,8 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    width: 100%;
+    font-size: 1.1rem;
 }
 
 .project-list li:hover {
@@ -56,4 +51,39 @@ p {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.post-wrapper:global(img) {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+        margin-left: 10px;
+    }
+
+    .project-list {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    p {
+        margin-left: 10px;
+        font-size: 1rem;
+    }
 }

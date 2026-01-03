@@ -5,8 +5,38 @@ const metaDesc = "This is the Home page."
 ---
 
     <Layout title={pageTitle} description={metaDesc}>
-        <main>
-            <h1>{pageTitle}</h1>
-            <p>Welcome To my Page</p>
+        <main class="home-main">
+            <h1>Welcome to my page</h1>
+            <div class="home-wrapper">
+                <p>This is just a fake site.
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quae qui obcaecati aliquam quas quasi, cum ex earum et perspiciatis, ipsam iste similique velit magni. Ea facere soluta rem, excepturi molestias repellendus inventore sunt quia eligendi ex expedita, porro nam minus? Ex vero aliquid labore laudantium enim facilis ab ducimus!</p>
+            </div>
         </main>
     </Layout>
+
+    <style>
+        h1 {
+            font-size: 4rem;
+        }
+        p {
+            font-size: 2rem;
+        }
+
+        .home-main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem 1rem;
+        }
+
+        .home-wrapper {
+            background: lightgray;
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
